@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link rel="stylesheet" href="/assets/css/course.css">
+        <style>
+            form{
+                padding: 20px 10px;
+            }
+            body{
+                font-family: arial;
+                margin: 0;
+            }
+            nav{
+                background: #ff5353;
+                padding: 20px 10px;
+            }
+            nav ul{
+                max-width: 960px;
+                margin: 0 auto;
+                padding: 0;
+            }
+            nav li{
+                list-style-type: none;
+                display: inline-block;
+                margin: 0 10px 0 0;
+            }
+            nav a{
+                color: #fff;
+                font-size: 18px;
+                background: rgba(255,255,255,0.2);
+                text-decoration: none;
+                padding: 10px;
+                display: block;
+            }
+            main, header{
+                max-width: 960px;
+                margin: 30px auto;
+                padding: 0 10px;
+                color: #333;
+            }
+            .google-btn{
+                color: #fff;
+                text-decoration: none;
+                font-size: 18px;
+                padding: 10px;
+                background: #ff5353;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <% if (user) { %>
+                <li><a href="/auth/logout">Log out</a></li>
+                <% } else { %>
+                <li><a href="/auth/login">Login</a></li>
+                <% } %>
+                <li><a href="/">Homepage</a></li>
+                <li><a href="/profile">Profile</a></li>
+            </ul>
+        </nav>
+<!--
+        <form>
+              <div class="form-group">
+                <label for="youtube">YoutubeLink</label>
+                <input type="text" class="form-control" name="youtube" id="link1" placeholder="Enter youtubeLink">
+              </div>
+              <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+-->
+        <div class="container box">
+            <div class="row ">
+                <div class="col-md-6 linksArea">
+                    <p>column for youtube links</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="row playlistArea">
+                        <p>columns for the youtube playlist</p>
+                    </div>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-4"></div>
+                        <button type="button" class="btn btn-primary">Create Course</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <script src="/assets/js/myscript.js"></script>
+    </body>
+</html>
