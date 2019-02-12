@@ -10,26 +10,29 @@ sendButton.click(() => {
   //   te = dat;
   // });
   let user;
-  $.ajax({
-    url: "/course/user",
-    success: function (dat) {
-      console.log(dat.data._id);
-      user = dat.data._id;
-      let data2 = {
-        "user": user,
-        "data": data
-      };
-      $.ajax({
-        url: URL,
-        type: "POST",
-        data: JSON.stringify(data2),
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function (msg) {
-          alert(msg);
-        }
-      });
-    }
-  });
-
+  let y = confirm("Confirm to Create");
+  if (y) {
+    $.ajax({
+      url: "/course/user",
+      success: function (dat) {
+        console.log(dat.data._id);
+        user = dat.data._id;
+        let data2 = {
+          "user": user,
+          "data": data
+        };
+        $.ajax({
+          url: URL,
+          type: "POST",
+          data: JSON.stringify(data2),
+          contentType: "application/json; charset=utf-8",
+          dataType: "json",
+          success: function (msg) {
+            alert("Course has been created");
+            window.location.href = "http://localhost:3000/profile";
+          }
+        });
+      }
+    });
+  }
 });

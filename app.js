@@ -12,7 +12,7 @@ const superagent = require('superagent');
 const app = express();
 
 const urlencodedParser = bodyParser.urlencoded({
-    extended: false
+    extended: true
 });
 // set view engine
 app.set('view engine', 'ejs');
