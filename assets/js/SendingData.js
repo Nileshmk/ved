@@ -3,7 +3,7 @@ let sendButton = $(
   "body > div > div.row > div:nth-child(2) > div.row.justify-content-md-center.createButton > div > button"
 );
 let te;
-let URL = "http://localhost:4000/course/add";
+let URL = "http://35.154.103.69/course/add";
 sendButton.click(() => {
   // $.post(URL, JSON.stringify(data), (dat, status) => {
   //   console.log(dat, status);
@@ -15,7 +15,7 @@ sendButton.click(() => {
     let y = confirm("Confirm to Edit");
     if (y) {
       $.ajax({
-        url: "http://localhost:4000/course/edit",
+        url: "http://35.154.103.69/course/edit",
         type: "POST",
         data: JSON.stringify({
           id: getDataId,

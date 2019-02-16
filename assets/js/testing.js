@@ -9,7 +9,7 @@
 // {{ state }}
 let gotData;
 $.ajax({
-  url: "http://localhost:4000/course/id",
+  url: "http://35.154.103.69/course/id",
   type: "POST",
   data: JSON.stringify({
     id: getDataId
@@ -27,10 +27,11 @@ $.ajax({
 });
 
 let webscrap = () => {
-  $("#courseTitle").val(gotData.courseName);
-  $("#description").val(gotData.description);
-  $("#storeD").trigger("click");
+
   $(document).ready(function () {
+    $("#courseTitle").val(gotData.courseName);
+    $("#description").val(gotData.description);
+    $("#storeD").trigger("click");
     for (var i = 0; i < gotData.topics.length; i++) {
       if (gotData.topics[i].subtopics == null) {
         singleInputArea.value = " =" + gotData.topics[i].youtubelink;
@@ -59,7 +60,7 @@ deleteButton.click(() => {
   let y = confirm("do you want to delete");
   if (y) {
     $.ajax({
-      url: "http://localhost:4000/course/delete",
+      url: "http://35.154.103.69/course/delete",
       type: "POST",
       data: JSON.stringify({
         id: getDataId
@@ -75,5 +76,3 @@ deleteButton.click(() => {
     });
   }
 });
-
-let editButton = $("")
