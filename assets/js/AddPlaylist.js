@@ -52,6 +52,18 @@ $("#storeD").click(() => {
     $("#exampleModalLong").modal("toggle");
   }
 });
+let dataDelete = (first, second) => {
+  if (second != -1) {
+    console.log("subtopics");
+    console.log(data.topics[second].subtopics[first]);
+    data.topics[second].subtopics.splice(first, first + 1);
+  } else {
+    first = first - 1;
+    console.log("topic");
+    console.log(data.topics[first]);
+    data.topics.splice(first, first + 1);
+  }
+}
 
 let dropListElement = (target, url, title) => {
   let temp = exampleListBlock.clone(true);
@@ -59,10 +71,16 @@ let dropListElement = (target, url, title) => {
   temp.find("img")[0].src = url;
   temp.find("input")[0].value = title;
   temp.insertBefore(target.parentElement);
-  console.log(temp);
+  console.log("This is another temp", temp);
+  temp.find("i").click(() => {
+    console.log(temp.find("i"));
+    let first = temp.parent().children().index(temp);
+    let second = temp.parent().parent().parent().find('.topicName,>.boxContainer').index(temp.parent().parent().prev());
+    console.log(first, second);
+    dataDelete(first, second);
+    temp.remove();
+  })
   console.log(target);
-  //    t1 = target;
-  //    t2 = element;
 };
 // function for add the every data box in youtube playlist
 let enabledraggable = () => {
@@ -70,16 +88,16 @@ let enabledraggable = () => {
   let dropTarget = document.querySelector("#target");
 
   for (let i = 0; i < draggables.length; i++) {
-    draggables[i].addEventListener("dragstart", function(ev) {
+    draggables[i].addEventListener("dragstart", function (ev) {
       ev.dataTransfer.setData("srcId", ev.target.id);
     });
   }
 
-  dropTarget.addEventListener("dragover", function(ev) {
+  dropTarget.addEventListener("dragover", function (ev) {
     ev.preventDefault();
   });
 
-  dropTarget.addEventListener("drop", function(ev) {
+  dropTarget.addEventListener("drop", function (ev) {
     ev.preventDefault();
     let val = ev.dataTransfer.getData("srcId");
     console.log("value is ", val);
@@ -132,7 +150,7 @@ button.click(() => {
   //    console.log(inputArea.value);
   //    console.log(inputArea.value.split("=")[1]);
   playlistoptions.playlistId = inputArea.value.split("=")[1];
-  $.getJSON(playlistURL, playlistoptions, function(data) {
+  $.getJSON(playlistURL, playlistoptions, function (data) {
     displayPlaylist(data);
   });
   inputArea.value = "";

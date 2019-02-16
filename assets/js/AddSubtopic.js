@@ -1,11 +1,11 @@
 // 3
 let DragSubtopic = temp => {
   let dropTarget = temp.querySelector("#subTarget");
-  dropTarget.addEventListener("dragover", function(ev) {
+  dropTarget.addEventListener("dragover", function (ev) {
     ev.preventDefault();
   });
 
-  dropTarget.addEventListener("drop", function(ev) {
+  dropTarget.addEventListener("drop", function (ev) {
     ev.preventDefault();
     console.log("you draged on me");
     let val = ev.dataTransfer.getData("srcId");
@@ -64,7 +64,7 @@ let addLinkArea = () => {
   singleButton.onclick = () => {
     singlevideooptions.id = singleInputArea.value.split("=")[1];
     console.log(singlevideooptions);
-    $.getJSON(singlevideoURL, singlevideooptions, function(dat) {
+    $.getJSON(singlevideoURL, singlevideooptions, function (dat) {
       dropListElement(
         singleInputArea,
         dat.items[0].snippet.thumbnails.default.url,
@@ -106,30 +106,37 @@ topicButton.click(() => {
       <h4>
         ${singleInputArea.value}
         <i
-          class="fas fa-minus-square subgroupBox"
+          class="fas fa-times"
           style="float:right"
+        ></i>
+        <i
+          class="fas fa-caret-down subgroupBox"
+          style="float:right; margin-right:30px;"
         ></i>
       </h4>
       <hr />
     `;
     temp.innerHTML = markup;
-    console.log(temp);
+    console.log("This is temp", temp);
     data.topics.push({
       topicno: data.topics.length + 1,
       "topic name": singleInputArea.value,
       youtubelink: null,
       subtopics: []
     });
+    let tempest = jQuery(temp);
+    tempest.find(".fa-times").click(() => {
+      let first = tempest.parent().parent().children().find('.topicName,>.boxContainer').index(tempest);
+      tempest.next().remove();
+      tempest.remove();
+      data.topics.splice(first, first + 1);
+    });
+    tempest.find(".subgroupBox").click(() => {
+      tempest.find(".subgroupBox").toggleClass("fa-caret-down fa-caret-right");
+    })
+
     document.querySelector("#target").before(temp);
     addLinkArea();
   }
   singleInputArea.value = "";
-});
-
-// Add the subVideos
-let subButton = $(".subgroupBox");
-
-subButton.click(() => {
-  subButton.toggleClass("fa-minus-square fa-plus-square");
-  // let temp = singleInputArea.parentElement.clone();
 });

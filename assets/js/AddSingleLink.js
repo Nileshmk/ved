@@ -8,7 +8,7 @@ let topicButton = $("#target > div > .topicSubmit");
 singleButton.click(() => {
   singlevideooptions.id = singleInputArea.value.split("=")[1];
   console.log(singlevideooptions);
-  $.getJSON(singlevideoURL, singlevideooptions, function(dat) {
+  $.getJSON(singlevideoURL, singlevideooptions, function (dat) {
     dropListElement(
       singleInputArea,
       dat.items[0].snippet.thumbnails.default.url,
@@ -31,7 +31,7 @@ singleButton.click(() => {
 
 // AddingButtonListener(singleInputArea, singleButton);
 
-$("#target > input").bind("keypress", function(e) {
+$("#target > input").bind("keypress", function (e) {
   if (e.keyCode == 13) {
     $("#target > div > .linkSubmit").trigger("click");
     // console.log("hello");
