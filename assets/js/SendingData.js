@@ -24,9 +24,9 @@ sendButton.click(() => {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (msg) {
-          console.log(msg);
-          // alert("Course has been created");
-          // window.location.href = "http://localhost:3000/profile";
+
+          alert("Course has been updated");
+          window.location.href = "http://localhost:3000/profile";
         }
       });
     }
