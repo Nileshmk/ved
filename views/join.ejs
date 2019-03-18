@@ -67,37 +67,30 @@
         </ul>
       </nav>
       <div class="container">
-      <!-- <div class="row">
-        <% for(let i = 0;i<courses.length;i++){%>
-        <div class="col-md-4 col-sm-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title"><%= courses[i].name%></h5>
-              <p class="card-text"><%= courses[i].description%></p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-          <% } %>
-        </div>
-      </div> -->
       <div class="row" style="padding-top:10px;">
-        <% for(let i = 0;i<courses.length;i++){%>        
-        <div class="col-sm-4">
+        <div class="col-sm-8">
           <div class="card">
-            <img class="card-img-top" src="/assets/images/vocational-training-56abb32548.jpg" alt="Card image cap">
             <div class="card-body">
-              <h4 class="card-title"><%= courses[i].name%></h4>
-              <p class="card-text"><%= courses[i].description%></p>
-              <a href="/course/course?id=<%= courses[i]._id%>" class="btn btn-primary">Go somewhere</a>
+                <div class="row">              
+              <div class="col-sm-4"><img class="card-img-top" src="/assets/images/vocational-training-56abb32548.jpg" alt="Card image cap" style="max-height: 300px;"></div>
+              <div class="col-sm-8"><h4 class="card-title"><%= course.name%></h4>
+                <p class="card-text"><%= course.description%></p></div>
+                </div>
+                <input type="email" id="friends" placeholder="enter email">
+              <button class="btn">Add friend</button>
             </div>
           </div>
         </div>
-        <% } %>
-
+        <div class="col-sm-4">
+            <p>Per Person: <span><%=course.fees%></span></p>
+            <p>Total price: <span><%=course.fees%></span></p>
+            <a href="/pay"><button class="btn btn-primary">Pay</button></a>
+        </div>
       </div>
       </div>
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="http://localhost:3000/assets/js/addingfriend.js"></script>
     </body>
 </html>

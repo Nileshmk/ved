@@ -6,7 +6,7 @@ module.exports = {
             clientSecret: '5v8t7nGr7s-6JT9JdGVB40lM'
         },
         mongodb: {
-            dbURI: 'mongodb://nil:nilkeshav1@ds223063.mlab.com:23063/code'
+            dbURI: 'mongodb://nil:nilkeshav1@ds227199.mlab.com:27199/vedam'
         },
         session: {
             cookieKey: 'thenetninjaisawesomeiguess'

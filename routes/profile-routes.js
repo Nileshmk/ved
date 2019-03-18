@@ -25,24 +25,5 @@ router.get('/', authCheck, (req, res) => {
         });
 });
 
-router.get('/course', (req, res) => {
-    res.render('course', {
-        user: req.user
-    });
-});
-
-router.get('/edit', (req, res) => {
-    if (req.query.id) {
-        res.render('edit', {
-            user: req.user,
-            id: req.query.id
-        });
-    } else {
-        res.send({
-            "error": "invalid request"
-        });
-    }
-})
-
 
 module.exports = router;

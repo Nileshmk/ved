@@ -10,10 +10,8 @@ const keys = require('./config/keys');
 const bodyParser = require('body-parser');
 const superagent = require('superagent');
 const app = express();
-
-const urlencodedParser = bodyParser.urlencoded({
-    extended: true
-});
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
 // set view engine
 app.set('view engine', 'ejs');
 
@@ -29,7 +27,13 @@ app.use(passport.session());
 
 app.use('/assets', express.static('assets'));
 // connect to mongodb
-mongoose.connect(keys.mongodb.dbURI, () => {
+const options =  {
+    server: {
+        reconnectTries: Number.MAX_VALUE,
+        reconnectInterval: 1000, // reconnect after 1 second(s)
+    }
+};
+mongoose.connect(keys.mongodb.dbURI,options, () => {
     console.log('connected to mongodb');
 });
 
@@ -45,21 +49,21 @@ app.get('/', (req, res) => {
     });
 });
 
-app.post('/login', urlencodedParser, (req, res) => {
-    console.log(req.body);
-    superagent
-        .post('http://35.154.103.69/profile/login')
-        .send({
-            "email": req.body.email,
-            "password": req.body.password
-        })
-        .set('Accept', 'application/json')
-        .end((err, ress) => {
-            res.render('profile', {
-                user: ress.body.user
-            });
-        });
-});
+// app.post('/login', urlencodedParser, (req, res) => {
+//     console.log(req.body);
+//     superagent
+//         .post('http://35.154.103.69/profile/login')
+//         .send({
+//             "email": req.body.email,
+//             "password": req.body.password
+//         })
+//         .set('Accept', 'application/json')
+//         .end((err, ress) => {
+//             res.render('profile', {
+//                 user: ress.body.user
+//             });
+//         });
+// });
 
 app.listen(3000, () => {
     console.log('app now listening for requests on port 3000');

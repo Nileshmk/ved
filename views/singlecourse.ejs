@@ -67,33 +67,21 @@
         </ul>
       </nav>
       <div class="container">
-      <!-- <div class="row">
-        <% for(let i = 0;i<courses.length;i++){%>
-        <div class="col-md-4 col-sm-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title"><%= courses[i].name%></h5>
-              <p class="card-text"><%= courses[i].description%></p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-          <% } %>
-        </div>
-      </div> -->
       <div class="row" style="padding-top:10px;">
-        <% for(let i = 0;i<courses.length;i++){%>        
-        <div class="col-sm-4">
+        <div class="col-sm-12">
           <div class="card">
-            <img class="card-img-top" src="/assets/images/vocational-training-56abb32548.jpg" alt="Card image cap">
+            <img class="card-img-top" src="/assets/images/vocational-training-56abb32548.jpg" alt="Card image cap" style="max-height: 300px;">
             <div class="card-body">
-              <h4 class="card-title"><%= courses[i].name%></h4>
-              <p class="card-text"><%= courses[i].description%></p>
-              <a href="/course/course?id=<%= courses[i]._id%>" class="btn btn-primary">Go somewhere</a>
+              <h4 class="card-title"><%= course.name%></h4>
+              <p class="card-text"><%= course.description%></p>
+              <p><%=course.content%></p>
+              <p><%=course.category%></p>
+              <p><%=course.durationDays%> for <%=course.durationHours%></p>
+              <p><%=course.fees%></p>
+              <a href="/course/join?id=<%=course._id%>"><button class="btn btn-primary">join</button></a>
             </div>
           </div>
         </div>
-        <% } %>
-
       </div>
       </div>
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

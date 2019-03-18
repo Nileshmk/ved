@@ -1,61 +1,279 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Horizons by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>OAuth Tutorials</title>
-        <style>
-            body{
-                font-family: arial;
-                margin: 0;
-            }
-            nav{
-                background: #ff5353;
-                padding: 20px 10px;
-            }
-            nav ul{
-                max-width: 960px;
-                margin: 0 auto;
-                padding: 0;
-            }
-            nav li{
-                list-style-type: none;
-                display: inline-block;
-                margin: 0 10px 0 0;
-            }
-            nav a{
-                color: #fff;
-                font-size: 18px;
-                background: rgba(255,255,255,0.2);
-                text-decoration: none;
-                padding: 10px;
-                display: block;
-            }
-            main, header{
-                max-width: 960px;
-                margin: 30px auto;
-                padding: 0 10px;
-                color: #333;
-            }
-        </style>
-    </head>
-    <body>
-        <nav>
-            <ul>
-                <% if (user) { %>
-                <li><a href="/auth/logout">Log out</a></li>
-                <% } else { %>
-                <li><a href="/auth/login">Login</a></li>
-                <% } %>
-                <li><a href="/">Homepage</a></li>
-                <li><a href="/profile">Profile</a></li>
-            </ul>
-        </nav>
-        <header>
-            <h1>Net Ninja OAuth Tut's</h1>
-            <h2>Homepage</h2>
-        </header>
-        <main>
-            <p>Probably the best OAuth tutorials on the planet :)</p>
-        </main>
-    </body>
+	<head>
+		<title>Vedam Lab</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-layers.min.js"></script>
+		<script src="/assets/js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="/assets/css/skel.css" />
+			<link rel="stylesheet" href="/assets/css/style.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="homepage">
+
+		<!-- Header -->
+			<div id="header">
+				<div class="container">
+						
+					<!-- Logo -->
+						<h1><a href="#" id="logo"></a></h1>
+					
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#home">Home</a></li>
+								<li>
+									<a href="#product">Products</a>
+								</li>
+								<li><a href="#training">Training</a></li>
+								<li><a href="/course">Workshop</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                                <% if (user) { %>
+                                    <li><a href="/auth/logout">Log out</a></li>
+                                    <% } else { %>
+                                    <li><a href="/auth/login">Login</a></li>
+                                    <% } %>
+                                    <li><a href="/profile">Profile</a></li>
+							</ul>
+						</nav>
+
+
+					<!-- Banner -->
+						<div id="banner">
+							<div class="container">
+								<section>
+									<header class="major">
+										<h2 style="font-family: vedam">Vedam Lab</h2>
+										<span class="byline" style="font-family: vedam">the knowledge to era</span>
+                                    </header>
+								</section>			
+							</div>
+						</div>
+
+				</div>
+			</div>
+        
+		<!-- Featured -->
+		<a name="training">
+			<div class="wrapper style2">
+				<section class="container">
+					<header class="major">
+						<h2>Training</h2>
+						<span class="byline"></span>
+					</header>
+					<div class="row no-collapse-1">
+						<section class="4u">
+							<a href="#" class="image feature"><img height="160px" src="/assets/images/vocational-training-56abb32548.jpg" alt=""></a>
+                            <h3>Vocational Training</h3>
+							<p>vocational training batches on</p>
+                            <ul style="font-size: 13px">
+                                <li>1. Web and images processing embedded application(using raspberry pi)</li>
+                                <li>2. Developing a Controller Board and its Programming for details Click Here</li>
+                            </ul>
+						</section>
+						<section class="4u">
+							<a href="#" class="image feature"><img height="160px"  src="/assets/images/training-workshops-programme.jpg" alt=""></a>
+                            <h3>Workshop</h3>
+							<p>Here we conduct the workshops for web designing and raspberry pi.</p>
+						</section>
+						<section class="4u">
+							<a href="#" class="image feature"><img height="160px" src="/assets/images/internships.jpg" alt=""></a>
+                            <h3>Career & Internships</h3>
+							<p>Presently, there are no vacancies.<br>
+                                You can send your resume to admin@vedamlab.com for future references
+                                <br>For internships, mail us on above email id
+</p>
+						</section>
+	
+					</div>
+				</section>
+			</div>
+		</a>
+            <!-- Main -->
+		<a name="product">
+			<div id="main" class="wrapper style1">
+				<section class="container">
+					<header class="major">
+						<h2>Products and Services</h2>
+						<span class="byline"></span>
+					</header>
+					<div class="row">
+					
+						<!-- Content -->
+							<div class="6u">
+								<section>
+									<ul class="style">
+										<li>
+											<span class="fa fa-wrench"></span>
+											<h3>Software Testing</h3>
+											<span>Software or application development is one of the most crucial stages but it’s incomplete without QA testing. QA testing process purifies each and every insight of an application by relating all such pre-defined objectives.</span>
+										</li>
+										<li>
+											<span class="fa fa-cloud"></span>
+											<h3>Software Products</h3>
+											<span>Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span>
+										</li>
+									</ul>
+								</section>
+							</div>
+							<div class="6u">
+								<section>
+									<ul class="style">
+										<li>
+											<span class="fa fa-cogs"></span>
+											<h3>Hardware Products</h3>
+											<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim.</span>
+										</li>
+										<li>
+											<span class="fa fa-leaf"></span>
+											<h3>Software Development</h3>
+											<span>Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span>
+										</li>
+									</ul>
+								</section>
+							</div>
+
+					</div>
+				</section>
+			</div>
+</a>
+<a name="contact">
+            <div class="wrapper style2 team-mate" >
+				<section class="container">
+					<header class="major">
+						<h2>Our Team</h2>
+						<span class="byline"></span>
+					</header>
+					<div class="row no-collapse-1">
+						<section class="4u">
+									<header class="major">
+										<h3>Kondle Mohan</h3>
+									</header>
+									<ul class="contact">
+										<li>
+											<span class="mail">Mail</span>
+											<span><a href="#">kondlemohan@vedamlab.com<br>kondlemohan@gmail.com</a></span>
+										</li>
+										<li>
+											<span class="phone">Phone</span>
+											<span>8421817512, 7719977818</span>
+										</li>
+									</ul>	
+						</section>
+						<section class="4u">
+									<header class="major">
+										<h3>Madgundi Ashish</h3>
+									</header>
+									<ul class="contact">
+										<li>
+											<span class="mail">Mail</span>
+											<span><a href="#">ashishm@vedamlab.com<br>ashishm2020@gmail.com</a></span>
+										</li>
+										<li>
+											<span class="phone">Phone</span>
+											<span>8888988554</span>
+										</li>
+									</ul>	
+						</section>
+						<section class="4u">
+							<h3>Other Team-mates</h3>
+                            <ul class="contact">
+                                <li></li>
+                                <li>Madur Dattaprasad</li>
+                                <li>Vardhman Patil</li>
+                                <li>Prachi Shah</li>
+                                <li>Lavanya Shrigan</li>
+
+                            </ul>
+						</section>
+	
+					</div>
+				</section>
+			</div>
+		</a>
+		<!-- Footer -->
+			<div id="footer">
+				<div class="container">
+
+					<!-- Lists -->
+						<div class="row">
+                            <div class="4u">
+								<section>
+									<header class="major">
+										<h2>Location</h2>
+										<span class="byline"></span>
+									</header>
+                                    <div>
+									<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d950.4233285664094!2d75.92408989245534!3d17.66467864132423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc5da42f3578e91%3A0xa8a70058468368eb!2sVedam+Labs!5e0!3m2!1sen!2sin!4v1518963687893"  frameborder="0" style="border:0"></iframe>
+                                    </div>
+								</section>
+							</div>
+                            <div class="4u">
+								<section>
+									<header class="major">
+										<h2>Contacts</h2>
+										<span class="byline"></span>
+									</header>
+									<ul class="contact">
+										<li>
+											<span class="address">Address</span>
+											<span>155/5, Akkalkot Road, Solapur-413006. </span>
+										</li>
+										<li>
+											<span class="mail">Mail</span>
+											<span><a href="#">someone@untitled.tld</a></span>
+										</li>
+										<li>
+											<span class="phone">Phone</span>
+											<span>(0217)-265512</span>
+										</li>
+									</ul>	
+								</section>
+							</div>
+							<div class="4u">
+								<section>
+									<header class="major">
+										<h2>Contacts</h2>
+										<span class="byline"></span>
+									</header>
+									<ul class="contact">
+										<li>
+											<span class="address">Address</span>
+											<span>155/5, Akkalkot Road, Solapur-413006. </span>
+										</li>
+										<li>
+											<span class="mail">Mail</span>
+											<span><a href="#">someone@untitled.tld</a></span>
+										</li>
+										<li>
+											<span class="phone">Phone</span>
+											<span>(0217)-265512</span>
+										</li>
+									</ul>	
+								</section>
+							</div>
+						</div>
+
+					<!-- Copyright -->
+						<div class="copyright" style="text-align-last: right">
+							Copyright &copy; 2018
+						</div>
+
+				</div>
+			</div>
+
+	</body>
 </html>
