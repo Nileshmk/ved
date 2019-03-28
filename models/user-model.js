@@ -21,7 +21,9 @@ const courseSchema = mongoose.Schema({
     category:String,
     durationDays:Number,
     durationHours:Number,
-    fees:Number
+    fees:Number,
+    discount: Number,
+    maxUser: Number
 });
 module.exports = {
     "Profile":mongoose.model('profile', userSchema),

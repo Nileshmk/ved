@@ -1,0 +1,37 @@
+<html>
+   <head>
+     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+     <title>Paytm Secure Online Payment Gateway</title>
+   </head>
+   <body>
+      <table align='center'>
+            <tr>
+            <td><STRONG>Transaction is being processed,</STRONG></td>
+            </tr>
+            <tr>
+            <td><font color='blue'>Please wait ...</font></td>
+            </tr>
+            <tr>
+            <td>(Please do not press 'Refresh' or 'Back' button</td>
+            </tr>
+      </table>
+      <FORM NAME='TESTFORM' ACTION='http://localhost:3000/callback2' METHOD='POST'>
+            <input type='hidden' name='CURRENCY' value=<%=data.CURRENCY%>>
+            <input type='hidden' name='CUST_ID' value=<%=data.CUST_ID%>>
+            <input type='hidden' name='GATEWAYNAME' value=<%=data.GATEWAYNAME%>>
+            <input type='hidden' name='RESPMSG' value=<%=data.RESPMSG%>>
+            <input type='hidden' name='BANKNAME' value=<%=data.BANKNAME%>>
+            <input type='hidden' name='PAYMENTMODE' value=<%=data.PAYMENTMODE%>>
+            <input type='hidden' name='MID' value=<%=data.MID%>>
+            <input type='hidden' name='RESPCODE' value=<%=data.RESPCODE%>>
+            <input type='hidden' name='TXNID' value=<%=data.TXNID%>>
+            <input type='hidden' name='TXNAMOUNT' value=<%=data.TXNAMOUNT%>>
+            <input type='hidden' name='ORDERID' value=<%=data.ORDERID%>>
+            <input type='hidden' name='STATUS' value=<%=data.STATUS%>>
+            <input type='hidden' name='BANKTXNID' value=<%=data.BANKTXNID%>>
+            <input type='hidden' name='TXNDATE' value=<%=data.TXNDATE%>>
+            <input type='hidden' name='CHECKSUMHASH'   value=<%=data.CHECKSUMHASH%>>
+      </FORM>
+   </body>
+ <script type="text/javascript">  document.forms[0].submit();</script>    
+</html>

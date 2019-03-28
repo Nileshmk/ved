@@ -84,13 +84,17 @@
         <div class="col-sm-4">
             <p>Per Person: <span><%=course.fees%></span></p>
             <p>Total price: <span><%=course.fees%></span></p>
-            <a href="/pay"><button class="btn btn-primary">Pay</button></a>
+            <a href="http://localhost:3000/pay"><button class="btn btn-primary">Pay</button></a>
         </div>
       </div>
       </div>
       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="http://localhost:3000/assets/js/addingfriend.js"></script>
+      <script>
+        let getDiscount = '<%= course.discount%>';
+        let getmaxUser = '<%= course.maxUser%>';
+      </script>
+      <script src="http://localhost:3000/assets/js/addingfriend.js"></script>
     </body>
 </html>

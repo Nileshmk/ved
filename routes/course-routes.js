@@ -56,17 +56,17 @@ router.post('/addFriend',(req,res,next)=>{
     User.Profile.findOne({email:req.body.email})
     .then(user=>{
         console.log(user);
-        if(user){
+        if(user && user.email!=req.user.email){
             res.status(200).json({
                 user:user
             })
         }
         else{
-            res.status(400).json({
+            res.status(200).json({
                 "message":"user not found"
             })
         }
     })
-})
+});
 
 module.exports = router;
