@@ -62,7 +62,12 @@
     <body>
       <nav>
         <ul>
-          <li><a href="/">Homepage</a></li>
+            <% if (user) { %>
+              <li><a href="/auth/logout">Log out</a></li>
+              <% } else { %>
+              <li><a href="/auth/login">Login</a></li>
+              <% } %>
+     
           <li><a href="/profile">Profile</a></li>
         </ul>
       </nav>
@@ -88,7 +93,8 @@
             <div class="card-body">
               <h4 class="card-title"><%= courses[i].name%></h4>
               <p class="card-text"><%= courses[i].description%></p>
-              <a href="/course/course?id=<%= courses[i]._id%>" class="btn btn-primary">Go somewhere</a>
+              <a href="<%= courses[i].site%>" class="btn btn-primary">Detail</a>
+              <a href="/course/join?id=<%=courses[i]._id%>"><button class="btn btn-primary">Register</button></a>              
             </div>
           </div>
         </div>

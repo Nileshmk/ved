@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const User = require('../models/user-model');
 const superagent = require('superagent');
 
 const authCheck = (req, res, next) => {
@@ -10,10 +11,12 @@ const authCheck = (req, res, next) => {
 };
 
 router.get('/', authCheck, (req, res) => {
-    res.render('profile', {
-        user: req.user,
-        courses: []
-    });
+    const course = User.Enrolled.find({studentId:req.user._id}).then(coursess=>{
+        res.render('profile', {
+            user: req.user,
+            courses: coursess
+        });
+    })
 });
 
 
