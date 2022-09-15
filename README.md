@@ -1,2 +1,3 @@
-# oauth-playlist
-Course files for The Net Ninja OAuth playlist on YouTube
+VedamLabs project
+
+Here there was a payment for the courses and user can login
